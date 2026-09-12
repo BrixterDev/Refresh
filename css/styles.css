@@ -637,6 +637,74 @@ mark.user-hl[data-color="brick"] { background: var(--hl-brick); }
 .save-status { font-size: 12px; color: var(--ink-faint); font-family: var(--font-mono); }
 
 /* =========================================================
+   Notes — mode tabs, save bar, read view
+   ========================================================= */
+.editor-mode-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.mode-tabs {
+  display: inline-flex;
+  background: var(--ink-deep);
+  border: 1px solid var(--hairline-soft);
+  border-radius: var(--radius-m);
+  padding: 3px;
+}
+.mode-tab {
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}
+.mode-tab:hover { color: var(--text); }
+.mode-tab.active {
+  background: var(--brass);
+  color: var(--brass-ink);
+}
+
+.save-status.saving { color: var(--brass-strong); }
+.save-status.saved  { color: var(--sage); }
+.save-status.error  { color: var(--brick-strong); }
+
+.note-rendered {
+  background: var(--paper);
+  color: var(--paper-ink);
+  border-radius: var(--radius-m);
+  padding: 26px 30px;
+  min-height: 360px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.note-rendered h2 { font-size: 22px; margin: 18px 0 8px; }
+.note-rendered h3 { font-size: 18px; margin: 16px 0 6px; }
+.note-rendered p  { margin: 0 0 12px; }
+.note-rendered ul, .note-rendered ol { margin: 0 0 12px 22px; }
+.note-rendered blockquote {
+  border-left: 3px solid var(--brass);
+  padding-left: 12px;
+  margin: 0 0 12px;
+  color: #574c33;
+  font-style: italic;
+}
+.note-rendered pre, .note-rendered code {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  background: rgba(36,31,20,0.07);
+  border-radius: var(--radius-s);
+}
+.note-rendered pre { padding: 12px 14px; overflow-x: auto; }
+.note-rendered code { padding: 1px 5px; }
+
+/* =========================================================
    Auth / landing page
    ========================================================= */
 .auth-page {
