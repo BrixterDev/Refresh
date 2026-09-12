@@ -98,9 +98,29 @@
       </div>
       <div class="notes-layout">
         <div class="notes-list" id="notes-list"></div>
+
+        <!-- EDIT MODE -->
         <div class="editor-panel" id="editor-panel" style="display:none;">
+          <div class="editor-mode-bar">
+            <div class="mode-tabs">
+              <button class="mode-tab active" data-mode="edit" id="mode-edit-btn">Edit</button>
+              <button class="mode-tab" data-mode="view" id="mode-view-btn">View</button>
+            </div>
+            <button class="btn btn-primary btn-sm" id="save-note-btn">Save</button>
+          </div>
+
           <input type="text" class="editor-title-input" id="note-title-input" placeholder="Untitled note" />
-          <div id="quill-editor"></div>
+
+          <!-- Edit view (Quill) -->
+          <div id="editor-edit-wrap">
+            <div id="quill-editor"></div>
+          </div>
+
+          <!-- Read view -->
+          <div id="editor-view-wrap" style="display:none;">
+            <div class="note-rendered" id="note-rendered"></div>
+          </div>
+
           <div class="editor-footer">
             <span class="save-status" id="note-save-status">All changes saved</span>
             <button class="btn btn-danger btn-sm" id="delete-note-btn">Delete note</button>
