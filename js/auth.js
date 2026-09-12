@@ -4,7 +4,7 @@ import { toast } from "./ui.js";
 // If already signed in, skip straight to the dashboard.
 const { data: { session } } = await supabase.auth.getSession();
 if (session) {
-  window.location.href = "dashboard.html";
+  window.location.href = "/dashboard";
 }
 
 // --- tab switching ---
@@ -55,7 +55,7 @@ loginForm.addEventListener("submit", async (e) => {
       : error.message;
     return;
   }
-  window.location.href = "dashboard.html";
+  window.location.href = "/dashboard";
 });
 
 // --- signup ---
@@ -88,7 +88,7 @@ signupForm.addEventListener("submit", async (e) => {
   }
 
   if (data.session) {
-    window.location.href = "dashboard.html";
+    window.location.href = "/dashboard";
   } else {
     toast("Account created. Check your email to confirm, then sign in.", "success");
     document.querySelector('.auth-tab[data-tab="login"]').click();
