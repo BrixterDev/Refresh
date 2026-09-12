@@ -9,7 +9,7 @@ import { initNotes } from "./notes.js";
 // ---------------------------------------------------------
 const { data: { session } } = await supabase.auth.getSession();
 if (!session) {
-  window.location.href = "index.html";
+  window.location.href = "/";
 }
 const user = session.user;
 
@@ -19,12 +19,12 @@ document.getElementById("greeting-name").textContent =
   (user.user_metadata?.full_name || user.email || "reviewer").split(" ")[0];
 
 supabase.auth.onAuthStateChange((event) => {
-  if (event === "SIGNED_OUT") window.location.href = "index.html";
+  if (event === "SIGNED_OUT") window.location.href = "/";
 });
 
 document.getElementById("signout-btn").addEventListener("click", async () => {
   await supabase.auth.signOut();
-  window.location.href = "index.html";
+  window.location.href = "/";
 });
 
 // ---------------------------------------------------------
