@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPA Lecturer — Your review materials, organized</title>
+<meta name="description" content="Keep every lecture video, handout, and note from your CPA review in one binder." />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="auth-page">
+
+  <section class="auth-hero">
+    <div class="hero-brand">
+      <div class="brand-mark" style="width:38px;height:38px;font-size:15px;">CL</div>
+      <div>
+        <div class="brand-name" style="font-size:18px;">CPA Lecturer</div>
+        <div class="brand-sub">A binder for your review, online</div>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <h1>Every lecture, handout, and margin note — one binder that doesn't get left on a jeepney.</h1>
+      <p>Upload the recordings and reviewers your professors hand out, mark up the passages that will actually be on the exam, and keep the notes you take while it's still fresh. Built for the long slog toward the CPALE.</p>
+    </div>
+
+    <div class="hero-stats">
+      <div><span class="num">01</span><span class="lbl">Store lecture videos</span></div>
+      <div><span class="num">02</span><span class="lbl">Highlight reviewers</span></div>
+      <div><span class="num">03</span><span class="lbl">Write it down, keep it</span></div>
+    </div>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <h2 id="auth-heading">Welcome back</h2>
+      <p class="lede" id="auth-lede">Sign in to reach your binder.</p>
+
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-tab="login">Sign in</div>
+        <div class="auth-tab" data-tab="signup">Create account</div>
+      </div>
+
+      <form class="auth-form active" id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" autocomplete="current-password" required />
+        </div>
+        <div class="field-error" id="login-error"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;" id="login-submit">Sign in</button>
+      </form>
+
+      <form class="auth-form" id="signup-form" novalidate>
+        <div class="field">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" autocomplete="name" required />
+        </div>
+        <div class="field">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" autocomplete="new-password" minlength="6" required />
+        </div>
+        <div class="field-error" id="signup-error"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;" id="signup-submit">Create account</button>
+      </form>
+
+      <p class="auth-foot-note">Your files stay private to your account. Nothing here is shared with classmates unless you send it yourself.</p>
+    </div>
+  </section>
+
+</div>
+
+<div id="toast-region"></div>
+
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>
